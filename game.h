@@ -28,7 +28,7 @@ public slots:
     void stop();
 
 private:
-    bool _play = false;
+    bool *_play = new bool(false);
     MovingPoint *point;
     std::tuple<int, int> xy;
 };

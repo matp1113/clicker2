@@ -17,7 +17,7 @@ bool Game::isPlay() const
 
 void Game::setPlay(bool play)
 {
-    _play = play;
+    *_play = play;
     emit playChanged();
     if(play){
         start();
@@ -25,16 +25,17 @@ void Game::setPlay(bool play)
 }
 
 void Game::start(){
-    _play = true;
+    *_play = true;
     qDebug() << "enter start()";
-    for(;;){
-        if(!_play){
+    while(true){
+        QCoreApplication::processEvents();
+        if(*_play == false){
             break;
         }
         xy = point->rand_pos();
         qDebug() << "from game: " << "x=" << QString::number(getX()) << "y=" << QString::number(getY()) << " | ";
         emit randomized(getX(), getY());
-        std::this_thread::sleep_for(std::chrono::nanoseconds(1000000000));
+        std::this_thread::sleep_for(std::chrono::nanoseconds(100000000));
     }
 }
 
