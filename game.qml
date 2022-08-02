@@ -4,7 +4,8 @@ import QtQml
 
 Item{
     id: root
-    property int size: myAppRoot.getPoints()
+    property int size: myAppRoot.getSize()
+    property int pointSize: myAppRoot.getPoint()
     width: size
     height: size
 
@@ -78,7 +79,7 @@ Item{
 
             Rectangle{
                 id: gamePoint
-                property int rectSize: root.size/20
+                property int rectSize: root.pointSize
                 property int xPos: 100;
                 property int yPos: 100;
                 x: xPos

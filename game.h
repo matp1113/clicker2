@@ -18,6 +18,7 @@ public:
     void setPlay(bool);
     int getX();
     int getY();
+    void setPointVelocity(int vel);
 
 signals:
     void playChanged();
@@ -31,6 +32,7 @@ private:
     bool *_play = new bool(false);
     MovingPoint *point;
     std::tuple<int, int> xy;
+    int _velocity;
 };
 
 #endif // GAME_H

@@ -54,4 +54,9 @@ int Game::getY()
     return std::get<1>(xy);
 }
 
+void Game::setPointVelocity(int vel)
+{
+    point->setVelocity(vel);
+}
+
 //QQuickItem *item

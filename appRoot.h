@@ -27,15 +27,19 @@ public slots:
     void openSettings();
     void exitSettings();
     void enterGame();
-    void setPoints(int points);
-    int getPoints();
+    void setSize(int size);
+    int getSize();
+    void setPoint(int size);
+    int getPoint();
+    void setGameVelocity(int vel);
 
 private:
     QQmlApplicationEngine *_engine;
     std::unique_ptr<Game> _game;
     std::unique_ptr<MainWindow> _main;
     std::unique_ptr<Settings> _settings;
-    int _points = 400;
+    int _size = 400;
+    int _pointSize = 20;
 };
 
 #endif // SUPPORT_H

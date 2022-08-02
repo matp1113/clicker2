@@ -10,9 +10,6 @@ Window{
     color: "white"
     visible: true
 
-//    Loader{
-//        id: loading
-//    }
     Label{
         id: spinerLabel
         text: "Game's window size:   "
@@ -27,7 +24,7 @@ Window{
         value: 400
         anchors.margins: 5
         anchors.centerIn: parent
-        onValueChanged: myAppRoot.setPoints(spiner.value)
+        onValueChanged: myAppRoot.setSize(spiner.value)
     }
 
     Label{
@@ -45,7 +42,7 @@ Window{
         anchors.margins: 5
         anchors.top: spiner.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        //onValueChanged:
+        onValueChanged: myAppRoot.setPoint(pointSpin.value)
     }
 
     Label{
@@ -63,7 +60,7 @@ Window{
         anchors.margins: 5
         anchors.top: pointSpin.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        //onValueChanged:
+        onValueChanged: myAppRoot.setGameVelocity(velocitySpin.value)
     }
 
     Button{
@@ -72,9 +69,6 @@ Window{
         anchors.horizontalCenter: parent.horizontalCenter
 
         onClicked: {
-//            loading.source = "main.qml"
-//            loading.item.size = spiner.value
-//            settingWindow.visible = false
             myAppRoot.exitSettings();
             settingWindow.close();
         }

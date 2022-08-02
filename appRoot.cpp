@@ -65,12 +65,28 @@ void AppRoot::enterGame()
     //_game->setPlay(true);
 }
 
-void AppRoot::setPoints(int points)
+void AppRoot::setSize(int size)
 {
-    _points = points;
+    _size = size;
 }
 
-int AppRoot::getPoints()
+int AppRoot::getSize()
 {
-    return _points;
+    return _size;
 }
+
+void AppRoot::setPoint(int size)
+{
+    _pointSize = size;
+}
+
+int AppRoot::getPoint()
+{
+    return _pointSize;
+}
+
+void AppRoot::setGameVelocity(int vel)
+{
+    _game->setPointVelocity(vel);
+}
+

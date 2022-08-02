@@ -10,10 +10,6 @@ ApplicationWindow {
     visible: true
     title: qsTr("Hello World")
 
-//    Loader{
-//        id: loading
-//    }
-
     Rectangle{
         id: rootRect
         anchors.fill: parent
@@ -42,10 +38,8 @@ ApplicationWindow {
             anchors.margins: 10
 
             onClicked: {
-    //            loading.source = "game.qml"
-    //            loading.item.size = size
-    //            root.visible = false
-                myAppRoot.enterGame();
+                myAppRoot.enterGame()
+                root.close()
             }
         }
 
@@ -57,9 +51,8 @@ ApplicationWindow {
             anchors.margins: 10
 
             onClicked: {
-    //            loading.source = "settings.qml"
-    //            root.visible = false
-                myAppRoot.openSettings();
+                myAppRoot.openSettings()
+                root.close()
             }
         }
 
