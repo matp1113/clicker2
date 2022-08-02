@@ -65,3 +65,12 @@ void AppRoot::enterGame()
     //_game->setPlay(true);
 }
 
+void AppRoot::setPoints(int points)
+{
+    _points = points;
+}
+
+int AppRoot::getPoints()
+{
+    return _points;
+}

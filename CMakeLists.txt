@@ -4,6 +4,7 @@ project(clicker VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_AUTORCC ON)
 
 find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
@@ -19,6 +20,7 @@ qt_add_executable(appclicker
     settings.h
     mainwindow.cpp
     mainwindow.h
+    images.qrc
 )
 
 qt_add_qml_module(appclicker

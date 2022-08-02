@@ -4,7 +4,7 @@ import QtQml
 
 Item{
     id: root
-    property int size: 400
+    property int size: myAppRoot.getPoints()
     width: size
     height: size
 
@@ -101,10 +101,10 @@ Item{
         target: myGame
 
         onRandomized: {
-            console.log("I received x=" + xPar + ", y=" + yPar)
+//            console.log("I received x=" + xPar + ", y=" + yPar)
             gamePoint.xPos = xPar
             gamePoint.yPos = yPar
-            console.log("and now xPos=" + gamePoint.xPos + ", yPos=" + gamePoint.yPos)
+//            console.log("and now xPos=" + gamePoint.xPos + ", yPos=" + gamePoint.yPos)
         }
     }
 

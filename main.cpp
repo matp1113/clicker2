@@ -31,14 +31,7 @@ int main(int argc, char *argv[])
         }
     }
 
-    //std::unique_ptr<QQmlApplicationEngine> engine = std::make_unique<QQmlApplicationEngine>();
     QQmlApplicationEngine *engine = new QQmlApplicationEngine();
-
-//    QString direction = QDir::currentPath();
-
-//    QQuickView view(QUrl::fromLocalFile(direction + "/" + "clicker" + "/" + "game.qml"));
-//    std::unique_ptr<QObject> item = std::make_unique<QObject>(view.rootObject());
-
 
     AppRoot root(&app, engine);
 

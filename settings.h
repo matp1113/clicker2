@@ -10,7 +10,6 @@ public:
     explicit Settings(QObject *parent = nullptr);
     ~Settings();
 
-signals:
 
 };
 #endif // SETTINGS_H
