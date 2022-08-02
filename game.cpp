@@ -70,3 +70,8 @@ void Game::setPointVelocity(int vel)
 {
     point->setVelocity(vel);
 }
+
+int Game::getPointVelocity()
+{
+    return point->getVelocity();
+}

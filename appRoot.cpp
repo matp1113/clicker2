@@ -72,12 +72,12 @@ int AppRoot::getSize()
     return _size;
 }
 
-void AppRoot::setPoint(int size)
+void AppRoot::setPointSize(int size)
 {
     _pointSize = size;
 }
 
-int AppRoot::getPoint()
+int AppRoot::getPointSize()
 {
     return _pointSize;
 }
@@ -85,5 +85,10 @@ int AppRoot::getPoint()
 void AppRoot::setGameVelocity(int vel)
 {
     _game->setPointVelocity(vel);
+}
+
+int AppRoot::getGameVelocity()
+{
+    return _game->getPointVelocity();
 }
 

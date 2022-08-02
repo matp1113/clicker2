@@ -33,3 +33,8 @@ void MovingPoint::setVelocity(int vel)
     _velocity = vel;
 }
 
+int MovingPoint::getVelocity()
+{
+    return _velocity;
+}
+

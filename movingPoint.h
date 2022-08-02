@@ -14,6 +14,7 @@ public:
     std::tuple<int, int> rand_pos();
     MovingPoint() = default;
     void setVelocity(int vel);
+    int getVelocity();
 };
 
 #endif // MOVINGPOINT_H

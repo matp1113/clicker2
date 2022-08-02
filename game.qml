@@ -5,7 +5,7 @@ import QtQml
 Item {
     id: root
     property int size: myAppRoot.getSize()
-    property int pointSize: myAppRoot.getPoint()
+    property int pointSize: myAppRoot.getPointSize()
     width: size
     height: size
 

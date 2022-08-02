@@ -29,9 +29,10 @@ public slots:
     void enterGame();
     void setSize(int size);
     int getSize();
-    void setPoint(int size);
-    int getPoint();
+    void setPointSize(int size);
+    int getPointSize();
     void setGameVelocity(int vel);
+    int getGameVelocity();
 
 private:
     QQmlApplicationEngine *_engine;

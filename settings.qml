@@ -21,7 +21,7 @@ Window{
         id: spiner
         from: 100
         to: 800
-        value: 400
+        value: myAppRoot.getSize()
         anchors.margins: 5
         anchors.centerIn: parent
         onValueChanged: myAppRoot.setSize(spiner.value)
@@ -38,11 +38,11 @@ Window{
         id: pointSpin
         from: spiner.value/40
         to: spiner.value/10
-        value: spiner.value/20
+        value: myAppRoot.getPointSize()
         anchors.margins: 5
         anchors.top: spiner.bottom
         anchors.horizontalCenter: parent.horizontalCenter
-        onValueChanged: myAppRoot.setPoint(pointSpin.value)
+        onValueChanged: myAppRoot.setPointSize(pointSpin.value)
     }
 
     Label{
@@ -56,7 +56,7 @@ Window{
         id: velocitySpin
         from: 5
         to: 20
-        value: 10
+        value: myAppRoot.getGameVelocity();
         anchors.margins: 5
         anchors.top: pointSpin.bottom
         anchors.horizontalCenter: parent.horizontalCenter

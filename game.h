@@ -19,6 +19,7 @@ public:
     int getX();
     int getY();
     void setPointVelocity(int vel);
+    int getPointVelocity();
 
 signals:
     void playChanged();
@@ -39,5 +40,3 @@ private:
 };
 
 #endif // GAME_H
-
-//QQuickItem *
