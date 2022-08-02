@@ -13,7 +13,6 @@ public:
 
 private:
     QObject *parentObject;
-
 };
 
 #endif // MAINWINDOW_H

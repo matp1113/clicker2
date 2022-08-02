@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.5
 
 Window{
-    property int size: myAppRoot.getPoints()
+    property int size: myAppRoot.getSize()
 
     id: settingWindow
     width: 620

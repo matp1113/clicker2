@@ -2,7 +2,7 @@ import QtQuick 2.0
 import QtQuick.Controls 2.5
 import QtQml
 
-Item{
+Item {
     id: root
     property int size: myAppRoot.getSize()
     property int pointSize: myAppRoot.getPoint()
@@ -10,7 +10,7 @@ Item{
     height: size
 
     Window {
-        property int points: 0
+        property int points: myGame.receivePoints()
 
         id: windowRoot
 
@@ -27,7 +27,7 @@ Item{
         // ---- pointField
         Rectangle{
             id: pointField
-            width: root.size*(3/5)
+            width: root.size*(2/5)
             height: root.size/5
             color: "lightblue"
             anchors.top: parent.top
@@ -68,6 +68,22 @@ Item{
         }
         // ---- stopButton
 
+        // ---- quitButton
+        Button{
+            id: quitButton
+            width: root.size/5
+            height: root.size/5
+            anchors.top: parent.top
+            anchors.left: stopButton.right
+            text: "exit"
+
+            onClicked: {
+                myGame.stop();
+                windowRoot.close();
+            }
+        }
+        // ---- quitButton
+
         // ---- board
         Rectangle{
             id: board
@@ -91,7 +107,10 @@ Item{
 
                 MouseArea{
                     anchors.fill: parent
-                    onClicked: windowRoot.points = windowRoot.points + 1
+                    onClicked: {
+                        myGame.addPoint()
+                        windowRoot.points = myGame.receivePoints()
+                    }
                 }
             }
         }
@@ -102,10 +121,10 @@ Item{
         target: myGame
 
         onRandomized: {
-//            console.log("I received x=" + xPar + ", y=" + yPar)
+            console.log("I received x=" + xPar + ", y=" + yPar)
             gamePoint.xPos = xPar
             gamePoint.yPos = yPar
-//            console.log("and now xPos=" + gamePoint.xPos + ", yPos=" + gamePoint.yPos)
+            console.log("and now xPos=" + gamePoint.xPos + ", yPos=" + gamePoint.yPos)
         }
     }
 

@@ -17,7 +17,7 @@ bool Game::isPlay() const
 
 void Game::setPlay(bool play)
 {
-    *_play = play;
+    _play = play;
     emit playChanged();
     if(play){
         start();
@@ -25,11 +25,11 @@ void Game::setPlay(bool play)
 }
 
 void Game::start(){
-    *_play = true;
+    _play = true;
     qDebug() << "enter start()";
     while(true){
         QCoreApplication::processEvents();
-        if(*_play == false){
+        if(_play == false){
             break;
         }
         xy = point->rand_pos();
@@ -42,6 +42,18 @@ void Game::start(){
 void Game::stop()
 {
     setPlay(false);
+}
+
+void Game::addPoint()
+{
+    if(_play == true){
+        _points = _points + 1;
+    }
+}
+
+int Game::receivePoints()
+{
+    return _points;
 }
 
 int Game::getX()
@@ -58,5 +70,3 @@ void Game::setPointVelocity(int vel)
 {
     point->setVelocity(vel);
 }
-
-//QQuickItem *item

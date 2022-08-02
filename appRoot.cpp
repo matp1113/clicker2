@@ -17,9 +17,6 @@ AppRoot::AppRoot(QObject *parent, QQmlApplicationEngine *engine, std::unique_ptr
 
     _game = std::make_unique<Game>(this->_main.get());
     _engine->rootContext()->setContextProperty("myGame", _game.get());
-
-
-    qDebug() << "constructed";
 }
 
 void AppRoot::changeWindow(Window w)

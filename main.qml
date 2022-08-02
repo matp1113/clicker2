@@ -8,7 +8,7 @@ ApplicationWindow {
     width: 800
     height: 600
     visible: true
-    title: qsTr("Hello World")
+    title: qsTr("Welcome in clicker game!")
 
     Rectangle{
         id: rootRect

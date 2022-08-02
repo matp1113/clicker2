@@ -27,12 +27,15 @@ signals:
 public slots:
     void start();
     void stop();
+    void addPoint();
+    int receivePoints();
 
 private:
-    bool *_play = new bool(false);
+    bool _play = false;
     MovingPoint *point;
     std::tuple<int, int> xy;
-    int _velocity;
+    int _velocity = 10;
+    int _points = 100;
 };
 
 #endif // GAME_H
