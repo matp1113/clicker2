@@ -120,7 +120,7 @@ Item {
     Connections {
         target: myGame
 
-        onRandomized: {
+        function onRandomized(xPar, yPar){
             console.log("I received x=" + xPar + ", y=" + yPar)
             gamePoint.xPos = xPar
             gamePoint.yPos = yPar
