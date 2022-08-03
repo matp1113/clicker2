@@ -6,7 +6,9 @@
 #include <QPointF>
 #include <QQuickItem>
 #include <QPointF>
+
 #include "movingPoint.h"
+#include "timer.h"
 
 class Game : public QObject
 {
@@ -24,20 +26,24 @@ public:
 signals:
     void playChanged();
     void randomized(int xPar, int yPar);
-    void dockingPoints();
+    void dockingPoints(int);
+    void changeTime();
+    void changedTime(QString);
 
 public slots:
     void start();
     void stop();
     void addPoint();
     int receivePoints();
+    void receiveTime(QString);
 
 private:
     bool _play = false;
-    MovingPoint *point;
+    MovingPoint *_point;
     std::tuple<int, int> xy;
     int _velocity = 10;
     int _points = 100;
+    Timer *_timer;
 };
 
 #endif // GAME_H

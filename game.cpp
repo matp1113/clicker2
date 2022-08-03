@@ -7,7 +7,10 @@
 Game::Game(QObject *parent)
     : QObject{parent}
 {
-    point = new MovingPoint();
+    _point = new MovingPoint();
+    _timer = new Timer();
+    connect(this, SIGNAL(changeTime()), _timer, SLOT(changeTime()));
+    connect(_timer, SIGNAL(timeChanged(QString)), this, SLOT(receiveTime(QString)));
 }
 
 bool Game::isPlay() const
@@ -35,9 +38,11 @@ void Game::start(){
         i++;
         if(i == 10){
             i = 0;
-            emit dockingPoints();
+            _points -= 1;
+            emit dockingPoints(_points);
+            emit changeTime();
         }
-        xy = point->rand_pos();
+        xy = _point->rand_pos();
         qDebug() << "from game: " << "x=" << QString::number(getX()) << "y=" << QString::number(getY()) << " | ";
         emit randomized(getX(), getY());
         std::this_thread::sleep_for(std::chrono::nanoseconds(100000000));
@@ -61,6 +66,11 @@ int Game::receivePoints()
     return _points;
 }
 
+void Game::receiveTime(QString timeString)
+{
+    emit changedTime(timeString);
+}
+
 int Game::getX()
 {
     return std::get<0>(xy);
@@ -73,10 +83,10 @@ int Game::getY()
 
 void Game::setPointVelocity(int vel)
 {
-    point->setVelocity(vel);
+    _point->setVelocity(vel);
 }
 
 int Game::getPointVelocity()
 {
-    return point->getVelocity();
+    return _point->getVelocity();
 }

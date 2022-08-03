@@ -11,6 +11,7 @@ Item {
 
     Window {
         property int points: myGame.receivePoints()
+        property string time: "0:00:00"
 
         id: windowRoot
 
@@ -54,7 +55,7 @@ Item {
                 height: parent.height/2
 
                 Text{
-                    text: "time: %1".arg("16:03")
+                    text: windowRoot.time
                     anchors.centerIn: parent
                 }
             }
@@ -148,8 +149,12 @@ Item {
             console.log("and now xPos=" + gamePoint.xPos + ", yPos=" + gamePoint.yPos)
         }
 
-        function onDockingPoints(){
-            windowRoot.points = windowRoot.points - 1
+        function onDockingPoints(gamePoints){
+            windowRoot.points = gamePoints
+        }
+
+        function onChangedTime(string){
+            windowRoot.time = string
         }
     }
 

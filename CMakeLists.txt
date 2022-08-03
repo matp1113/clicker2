@@ -20,6 +20,8 @@ qt_add_executable(appclicker
     settings.h
     mainwindow.cpp
     mainwindow.h
+    timer.cpp
+    timer.h
     images.qrc
 )
 
