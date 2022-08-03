@@ -33,9 +33,30 @@ Item {
             anchors.top: parent.top
             anchors.left: parent.left
 
-            Text{
-                text: "your points: %1".arg(windowRoot.points)
-                anchors.centerIn: parent
+            Rectangle{
+                id: firstText
+                anchors.top: parent.top
+                color: "lightblue"
+                width: parent.width
+                height: parent.height/2
+
+                Text{
+                    text: "your points: %1".arg(windowRoot.points)
+                    anchors.centerIn: parent
+                }
+            }
+
+            Rectangle{
+                id: secondText
+                color: "lightblue"
+                anchors.top: firstText.bottom
+                width: parent.width
+                height: parent.height/2
+
+                Text{
+                    text: "time: %1".arg("16:03")
+                    anchors.centerIn: parent
+                }
             }
         }
         // ---- pointField
