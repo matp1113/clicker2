@@ -126,6 +126,10 @@ Item {
             gamePoint.yPos = yPar
             console.log("and now xPos=" + gamePoint.xPos + ", yPos=" + gamePoint.yPos)
         }
+
+        function onDockingPoints(){
+            windowRoot.points = windowRoot.points - 1
+        }
     }
 
 }

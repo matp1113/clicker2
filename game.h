@@ -24,6 +24,7 @@ public:
 signals:
     void playChanged();
     void randomized(int xPar, int yPar);
+    void dockingPoints();
 
 public slots:
     void start();

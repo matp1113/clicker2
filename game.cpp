@@ -26,11 +26,16 @@ void Game::setPlay(bool play)
 
 void Game::start(){
     _play = true;
-    qDebug() << "enter start()";
+    int i = 0;
     while(true){
         QCoreApplication::processEvents();
         if(_play == false){
             break;
+        }
+        i++;
+        if(i == 10){
+            i = 0;
+            emit dockingPoints();
         }
         xy = point->rand_pos();
         qDebug() << "from game: " << "x=" << QString::number(getX()) << "y=" << QString::number(getY()) << " | ";
